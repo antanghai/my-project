@@ -18,6 +18,10 @@
      * 1.首先形参和实参的数量可以不等（谁多谁少无所谓）
      * 2.在函数内部可以知道形参和实参的值
      * 3.在函数内部可以更改实参的值
+     * 4.实参和形参默认值的问题:
+     *      1. 首先形参和实参一一对应，其次对应的形参和实参只要其中有一个是undefined，另一个是个其他值（例如数字），那么对应的形参和实参的美默认值为其他值（例如数字）
+     *      2. es6才支持在行参上直接赋值，es5不支持
+     * 
     */
 
     // function test(a,b){
@@ -44,17 +48,30 @@
     // function test(a,b){
     //     a = 3;
     //     console.log(arguments[0]); // 再深挖一点：a 和 arguments[0] 是映射关系。一个在栈中，一个在堆中，形参和实参对应才有这种映射关系
-
     // }
     // test(1,2);
 
+    // function test(a,b){
+    //     b = 3;
+    //     console.log(arguments[1]); // 当实参没有，对应形的参去改值是没有用的，依然是 undefined
+    // }
+    // test(1);
+
+
+    // 默认值的问题
+    // function test(a = 2,b){
+    //     console.log(a);
+    //     console.log(b);
+    // }
+    // test(undefined,1);
+
+    // es5的写法
     function test(a,b){
-        b = 3;
-        console.log(arguments[1]); // 当实参没有，对应的参数去改值是没有用的，依然是 undefined
-
+        var a = arguments[0] || 1;
+        var b = arguments[1] || 2;
+        console.log(a,b);
     }
-    test(1);
-
+    test();
    </script> 
 </body>
 </html>
