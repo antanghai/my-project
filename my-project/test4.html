@@ -17,6 +17,7 @@
     /**
      * 1.首先形参和实参的数量可以不等（谁多谁少无所谓）
      * 2.在函数内部可以知道形参和实参的值
+     * 3.在函数内部可以更改实参的值
     */
 
     // function test(a,b){
@@ -24,15 +25,35 @@
     //     console.log(test.length);
     // }
     // test(1,2);
-    function test(){
-        var sum = 0;
-        for(var i = 0; i < arguments.length; i++){
-            sum += arguments[i];
-        }
-        console.log(sum);
+
+
+    // function test(){
+    //     var sum = 0;
+    //     for(var i = 0; i < arguments.length; i++){
+    //         sum += arguments[i];
+    //     }
+    //     console.log(sum);
+
+    // }
+    // test(1,2,3);
+
+
+
+
+    // 改变实参的值
+    // function test(a,b){
+    //     a = 3;
+    //     console.log(arguments[0]); // 再深挖一点：a 和 arguments[0] 是映射关系。一个在栈中，一个在堆中，形参和实参对应才有这种映射关系
+
+    // }
+    // test(1,2);
+
+    function test(a,b){
+        b = 3;
+        console.log(arguments[1]); // 当实参没有，对应的参数去改值是没有用的，依然是 undefined
 
     }
-    test(1,2,3);
+    test(1);
 
    </script> 
 </body>
