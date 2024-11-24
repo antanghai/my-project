@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // function test(){
+    //     var a = b = 1; //这种定义b为全局变量
+    //     console.log(a,b);
+    // }
+    // test();
+    // console.log(b);
+
+    /**
+     * 1.首先形参和实参的数量可以不等（谁多谁少无所谓）
+     * 2.在函数内部可以知道形参和实参的值
+    */
+
+    // function test(a,b){
+    //     console.log(arguments.length);
+    //     console.log(test.length);
+    // }
+    // test(1,2);
+    function test(){
+        var sum = 0;
+        for(var i = 0; i < arguments.length; i++){
+            sum += arguments[i];
+        }
+        console.log(sum);
+
+    }
+    test(1,2,3);
+
+   </script> 
+</body>
+</html>
