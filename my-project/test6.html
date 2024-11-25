@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 寻找形参和变量声明
+        // 2. 实参值赋值给形参
+        // 3. 寻找函数声明并赋值函数体
+        // 4. 执行
+
+        // console.log(a);
+        // var a = 1;
+        // function a(){
+        //     console.log(2);
+        // }
+        // console.log(a);
+
+        // 练习1：
+        // function test(a){
+        //     console.log(a);
+        //     var a = 1;
+        //     console.log(a);
+        //     function a(){}
+        //     console.log(a);
+
+        //     var b = function(){};
+        //     console.log(b);
+        //     function d(){}
+        // }
+        // test(2);
+
+
+        // a undefined  2   function a(){}  1
+        // b undefined  function (){}
+        // d function d(){}
+
+
+        // 练习2：
+        // function test(a,b){
+        //     console.log(a);
+        //     c = 0;
+        //     var c;
+        //     a = 5;
+        //     b = 6;
+        //     console.log(b);
+        //     function b(){}
+        //     function d(){}
+        //     console.log(b);
+        // }
+        // test(1);
+
+        // a undefined 1
+        // b undefined function b(){}  6
+        // c undefined
+        // d function d(){}
+
+        // GO
+        // 1. 找变量声明
+        // 2. 找函数声明并赋值函数体
+        // 3. 执行
+
+        // 练习3：
+        // var a = 1;
+        // function a(){
+        //     console.log(2);
+        // }
+        // console.log(a);
+
+        // a undefined function a() 1
+
+        // 练习4：
+        // console.log(a,b);
+        // function a(){}
+        // var b = function(){}
+
+        // b undefined 
+        // a undefined function a(){}
+
+
+        // 练习5：
+        // function test(){
+        //     var a = b = 1;
+        //     console.log(b);
+        // }
+        // a undefined  1
+        // b undefined  1
+
+        // 练习6：
+        // var b = 3;
+        // console.log(a);
+        // function a(a){
+        //     console.log(a);
+        //     var a = 2;
+        //     console.log(a);
+        //     function a(){}
+        //     var b = 5;
+        //     console.log(b);
+            
+        // }
+        // a(1);
+
+        /**
+         * GO{
+         * b undefined 
+         * a function a(){}
+         * }
+         * 
+         * AO{
+         * a undefined  1   function a(){}  2
+         * b undefined
+         * 
+         * }
+        */
+
+        /**
+         * function a(){
+         *  ...
+         * }
+         * 
+         * function a(){
+         * ...
+         * }
+         * 
+         * 2
+         * 
+         * 5
+        */
+
+        // 练习7：
+        // a = 1;
+        // function test(){
+        //     console.log(a);
+        //     a = 2;
+        //     console.log(a);
+        //     var a = 3;
+        //     console.log(a);
+        // }
+        // test();
+        // var a;
+
+        /**
+         * GO{
+         * a undefined  1   2
+         * test function test(){...}
+         * }
+         * 
+         * AO{
+         * a undefined
+         * }
+        */
+
+        // undefined
+        // 2
+        // 3
+
+
+        // 练习8：
+        // function test(){
+        //     console.log(b);
+        //     if(a){
+        //         var b = 2;
+        //     }
+        //     c = 3;
+        //     console.log(c);
+        // }
+        // var a;
+        // test();
+        // a = 1;
+        // console.log(a);
+
+        /**
+         * GO{
+         * a undefined 1
+         * test function test(){...}
+         * }
+         * 
+         * AO{
+         * b undefined
+         * c undefined 3
+         * }
+        */
+
+        // 1
+        // undefined
+        // 3
+
+
+        // 练习8：
+        // function test(){
+        //     return a;
+        //     a = 1;
+        //     function test(){}
+        //     var a = 2;
+            
+        // }
+        // console.log(test());
+
+        /**
+         * GO{
+         * a undefine
+         * }
+         * AO{
+         * test function test(){...}
+         * 
+         * AO{
+         * a undefined
+         * }
+         * }
+        */
+
+        // 练习9：
+        // function test(){
+        //     a = 1;
+        //     function a(){}
+        //     var a = 2;
+        //     return a;
+        // }
+        // console.log(test());
+
+        /**
+         * GO{
+         * a undefined 1
+         * }
+         * 
+         * AO{
+         * a undefined function a(){} 2
+         * 
+         * }
+        */
+        
+
+        // 练习10：
+        a = 1;
+        function test(e){
+            function e(){}
+            arguments[0] = 2;
+            console.log(e);
+            if(a){
+                var b = 3;
+            }
+            var c;
+            a = 4;
+            var a;
+            console.log(b);
+            f = 5;
+            console.log(c);
+            console.log(a);
+        }
+        var a;
+        test(1);
+        console.log(a);
+        console.log(f);
+
+        /**
+         * GO{
+         * a undefined 1
+         * test function test(){...}
+         * 
+         * f undefined 5
+         * }
+         * 
+         * AO{
+         * e undefined 1 function e(){} 2
+         * b undefined
+         * c undefined
+         * a undefined 4
+         * 
+         * }
+         * 
+        */
+
+        // 2
+        // undefined
+        // undefined
+        // 4
+        // 1
+        // 5    
+    </script>
+</body>
+</html>
