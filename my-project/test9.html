@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script tyle="text/javascript">
+        // var num = 5;
+        // var arr = [1,2,3,5];
+
+        // for(var i = 0; i < arr.length; i++){
+        //     if(arr[i] == num){
+        //         arr.splice(i,1);
+        //     }
+        // }
+        // console.log(arr);
+
+        // 利用闭包进行累加
+        // function test(){
+        //     var num = 0;
+        //     function add(){
+        //         console.log(num++);
+        //     }
+        //     return add;
+        // }
+        // var add = test();
+        // add();
+        // add();
+
+        // 利用闭包打印一个班级进入退出班级的姓名
+        function obj(){
+            var students = [];
+
+            var operations = {
+                join: function(name){
+                    students.push(name);
+                    console.log(students);
+                },
+                leave: function(name){
+                    // 方法1：
+                    // for(var i = 0; i < students.length;i++){
+                    //     var item = students[i] // 优化for循环执行效率
+                    //     if(item== name){
+                    //         students.splice(item,1);
+                    //     }
+                    // }
+                    // console.log(students);
+
+                    // 方法2
+                    var idx = students.indexOf(name);
+                    if(idx != -1){
+                        students.splice(idx,1);
+                    }
+                    console.log(students);
+                }
+            }
+            return operations;
+        }
+        var obj = obj();
+        obj.join('张三');
+        obj.join('李四');
+        obj.leave('李四');
+    </script>
+</body>
+</html>
