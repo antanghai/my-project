@@ -6,62 +6,70 @@
     <title>Document</title>
 </head>
 <body>
-    <script tyle="text/javascript">
-        // var num = 5;
-        // var arr = [1,2,3,5];
+    <script type="text/javascript">
+        // function Car(color, brand){
+        //     // this: {
 
-        // for(var i = 0; i < arr.length; i++){
-        //     if(arr[i] == num){
-        //         arr.splice(i,1);
-        //     }
+        //     // }
+        //     this.color = color; 
+        //     this.brand = brand;
+
+        //     // return this; // 最后一步隐式返回this
         // }
-        // console.log(arr);
+        // var car1 = new Car('red','Banz'); // 当 Car被new 的时候，相当于普通函数被执行的时候，那么Car产生AO；执行完this指向car1
+        // console.log(car1.color);
 
-        // 利用闭包进行累加
+        /**
+         * GO{
+         * Car: function
+         * car1: {
+         * color: 'red',
+         * brand: 'Banz'
+         * }
+         * 
+         * }
+         * 
+         * AO{
+         *  this: {
+         *  color: color,
+         *  brand: brand
+         *  }
+         * 
+         * }
+        */
+
+
+
+        // function Car(color, brand){
+        //     var me = {};
+        //     me.color = color;
+        //     me.brand = brand;
+
+        //     return me;
+        // }
+        // var car = Car('red','Mazda');
+        // console.log(car.color);
+        // console.log(car.brand);
+
+
         // function test(){
-        //     var num = 0;
-        //     function add(){
-        //         console.log(num++);
+        //     var obj = {
+        //         name: '张三',
+        //         age: 20
         //     }
-        //     return add;
+        //     return obj;
         // }
-        // var add = test();
-        // add();
-        // add();
+        // var obj1 = test();
+        // console.log(obj1.name);
 
-        // 利用闭包打印一个班级进入退出班级的姓名
-        function obj(){
-            var students = [];
+        function Car(){
+            this.color = 'red';
+            this.brand = 'Banz';
 
-            var operations = {
-                join: function(name){
-                    students.push(name);
-                    console.log(students);
-                },
-                leave: function(name){
-                    // 方法1：
-                    // for(var i = 0; i < students.length;i++){
-                    //     var item = students[i] // 优化for循环执行效率
-                    //     if(item== name){
-                    //         students.splice(item,1);
-                    //     }
-                    // }
-                    // console.log(students);
-
-                    // 方法2
-                    var idx = students.indexOf(name);
-                    if(idx != -1){
-                        students.splice(idx,1);
-                    }
-                    console.log(students);
-                }
-            }
-            return operations;
+            return 123; // return一个原始值它是不理你的，引用一个引用值才给你返回
         }
-        var obj = obj();
-        obj.join('张三');
-        obj.join('李四');
-        obj.leave('李四');
+        var car = new Car();
+        console.log(car);
     </script>
 </body>
 </html>
