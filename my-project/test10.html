@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // var a = new Number(123);
+        // a.len = 3;
+        // console.log(a.len);
+
+        // var str = '123'; // string类型有length这个属性 这个说法是错的，因为在这个过程中进行了包装类
+        // //new String('123').length
+        // //console.log(new String());
+        // console.log(str.length);
+
+        // 数组的length属性可以截断数组
+        // var arr = [1,2,3,4,5];
+        // arr.length = 3;
+        // console.log(arr);
+        
+        // string为啥不能截断
+        // var str = 'abc';
+        // str.length = 1; // new String('abc').length
+        // // delete
+        // console.log(str);  
+
+        // var name = 'languiji';
+        // name += 10;
+        // 1
+        // var type = typeof(name);
+        // if(type.length === 6){
+        //     type.text = 'string';
+        // }
+        // console.log(type.text);
+
+        // function Car(brand, color){
+        //     this.brand = 'Benz';
+        //     this.color = 'red';
+        // }
+        // var car = new Car('Mazda', 'blank');
+        // console.log(car);
+
+        // 2
+        // function Test(a,b,c){
+        //     var d = 1;
+        //     this.a = a;
+        //     this.b = b;
+        //     this.c = c;
+            
+        //     function f(){
+        //         d++;
+        //         console.log(d);
+        //     }
+        //     this.g = f;
+
+        // }
+        // var test1 = new Test();
+        // test1.g();
+        // test1.g();
+        // var test2 = new Test();
+        // test2.g();
+
+        // 3
+        // var x = 1,
+        //     y = z = 0;
+        
+        // function add(n){
+        //     return n = n +1;
+        // }
+
+        // y = add(x);
+
+        // function add(n){
+        //     return n = n + 3;
+        // }
+        // z = add(x);
+
+        // console.log(x,y,z);
+
+        // 下面哪个能输出1，2，3，4，5
+        // function foo1(x){
+        //     console.log(arguments);
+        //     return x;
+        // }
+        // foo(1,2,3,4,5);
+
+
+        // function foo2(x){
+        //     console.log(arguments);
+        //     return x;
+        // }(1,2,3,4,5);
+
+
+        // (function foo3(x){
+        //     console.log(arguments);
+        //     return x;
+        // })(1,2,3,4,5);
+
+        // 5
+        // function b(x,y,a){
+        //     a = 10;
+        //     console.log(arguments[2]);
+        // }
+        // b(1,2,3);
+
+
+        var str = 'a';
+        var pos = str.charCodeAt(0);
+        console.log(pos);
+    </script>
+</body>
+</html>
